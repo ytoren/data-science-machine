@@ -75,8 +75,12 @@ sudo python2 -m ipykernel install --user
 sudo apt-get install python3-pip 
 sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 # sudo python3 -m pip --upgrade pip
-sudo -H python3 -m pip install ipykernel jupyter keras numpy pandas scikit-learn tensorflow protobuf matplotlib pystan pymc3 seaborn jupyter_nbextensions_configurator
+sudo -H python3 -m pip install ipykernel jupyter keras numpy pandas scikit-learn tensorflow protobuf matplotlib pystan pymc3 seaborn 
 sudo -H python3 -m ipykernel install --user
+# Extentions
+sudo -H python3 -m pip install jupyter_nbextensions_configurator jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user
+jupyter nbextensions_configurator enable --user
 # Jupyter autostart
 echo "[Unit]
 Description=Jupyter Workplace
