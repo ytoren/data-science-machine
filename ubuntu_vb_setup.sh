@@ -21,8 +21,8 @@ sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 ## insert guest addtions CDROM
 sudo mount /dev/cdrom /media/cdrom
 sudo /media/cdrom/VBoxLinuxAdditions.run
-sudo groupadd vboxusers
-sudo sudo usermod -a -G vboxusers $USER
+# sudo groupadd vboxsf
+sudo sudo usermod -a -G vboxsf $USER
 
 # R 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
