@@ -2,13 +2,6 @@
 sudo apt-get update 
 sudo apt-get upgrade
 
-######################
-# VBox guest additions
-######################
-## insert guest addtions CDROM
-sudo mount /dev/cdrom /media/cdrom
-sudo /media/cdrom/VBoxLinuxAdditions.run
-
 ###################
 # Graphical env
 ################
@@ -21,6 +14,13 @@ sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 sudo apt-get install build-essential default-jdk-headless wget gdebi-core software-properties-common net-tools nano apt-transport-https
 sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 #sudo purge-old-kernels
+
+######################
+# VBox guest additions
+######################
+## insert guest addtions CDROM
+sudo mount /dev/cdrom /media/cdrom
+sudo /media/cdrom/VBoxLinuxAdditions.run
 
 # R 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
