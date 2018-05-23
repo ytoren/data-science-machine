@@ -25,9 +25,12 @@ sudo apt-get install default-jdk-headless wget gdebi-core software-properties-co
 sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 #sudo purge-old-kernels
 
-# R 
+#############
+# Base R
+#############
+sudo apt-get install apt-transport-https
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-sudo add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial/'
+sudo add-apt-repository 'deb https://cran.rstudio.com/bin/linux/ubuntu artful/'
 sudo apt-get update
 
 sudo apt-get install r-base curl libcurl4-openssl-dev libxml2-dev libssl-dev
@@ -39,19 +42,11 @@ spark_install(version = '2.1.0')" > R_setup.R
 # in R: source('R_setup.R')
 
 
-
 ##################
 # Rstudio client 
 ##################
 ## Get link from https://www.rstudio.com/products/rstudio/download/
-# sudo apt-get install libgstreamer1.0-0 
 sudo apt-get install libxslt1-dev
-# wget http://no.archive.ubuntu.com/ubuntu/pool/universe/g/gstreamer0.10/libgstreamer0.10-0_0.10.36-1.5ubuntu1_amd64.deb
-# wget http://mirrors.kernel.org/ubuntu/pool/universe/g/gst-plugins-base0.10/gstreamer0.10-plugins-base_0.10.36-2ubuntu0.1_amd64.deb
-# wget http://mirrors.kernel.org/ubuntu/pool/universe/g/gst-plugins-base0.10/libgstreamer-plugins-base0.10-0_0.10.36-2ubuntu0.1_amd64.deb
-# sudo gdebi libgstreamer0.10-0_0.10.36-1.5ubuntu1_amd64.deb
-# sudo gdebi libgstreamer-plugins-base0.10-0_0.10.36-2ubuntu0.1_amd64.deb
-# sudo gdebi gstreamer0.10-plugins-base_0.10.36-2ubuntu0.1_amd64.deb
 wget https://download1.rstudio.org/rstudio-1.0.136-amd64.deb 
 sudo gdebi rstudio-1.0.136-amd64.deb
 
@@ -59,8 +54,9 @@ sudo gdebi rstudio-1.0.136-amd64.deb
 # Rstudio server
 #################
 ## Links: https://www.rstudio.com/products/rstudio/download-server/
-wget https://download2.rstudio.org/rstudio-server-1.1.383-amd64.deb
-sudo gdebi rstudio-server-1.1.383-amd64.deb
+sudo apt-get install gdebi-core
+wget https://download2.rstudio.org/rstudio-server-1.1.453-amd64.deb
+sudo gdebi rstudio-server-1.1.453-amd64.deb
 sudo rstudio-server verify-installation
 
 
