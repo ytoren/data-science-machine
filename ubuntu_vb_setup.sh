@@ -33,7 +33,7 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD
 sudo add-apt-repository 'deb https://cran.rstudio.com/bin/linux/ubuntu artful/'
 sudo apt-get update
 
-sudo apt-get install r-base r-cran-rjava default-jdk-headless curl libcurl4-openssl-dev libxml2-dev libssl-dev
+sudo apt-get install r-base r-cran-rjava default-jdk-headless curl libcurl4-openssl-dev libxml2-dev libssl-dev libsecret-1-dev
 sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 # R CMD BATCH 
 echo "install.packages(c('rmarkdown', 'formatR', 'shiny','tidyverse', 'gridExtra', 'nlme',  'h2o', 'randomForest', 'xgboost', 'caret', 'sparklyr'));
