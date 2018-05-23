@@ -21,7 +21,7 @@ sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 #####################
 # Common tools
 ###############
-sudo apt-get install default-jdk-headless wget gdebi-core software-properties-common net-tools nano apt-transport-https
+sudo apt-get install wget gdebi-core software-properties-common net-tools nano apt-transport-https
 sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 #sudo purge-old-kernels
 
@@ -33,7 +33,7 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD
 sudo add-apt-repository 'deb https://cran.rstudio.com/bin/linux/ubuntu artful/'
 sudo apt-get update
 
-sudo apt-get install r-base curl libcurl4-openssl-dev libxml2-dev libssl-dev
+sudo apt-get install r-base r-cran-rjava curl libcurl4-openssl-dev libxml2-dev libssl-dev
 sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 # R CMD BATCH 
 echo "install.packages(c('rmarkdown', 'formatR', 'shiny','tidyverse', 'gridExtra', 'nlme',  'h2o', 'randomForest', 'xgboost', 'caret', 'sparklyr'));
