@@ -74,12 +74,14 @@ sudo python2 -m ipykernel install --user
 sudo apt-get install python3-pip 
 sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 # sudo python3 -m pip --upgrade pip
-sudo -H python3 -m pip install ipykernel jupyter keras numpy pandas scikit-learn tensorflow protobuf matplotlib pystan pymc3 seaborn 
+sudo -H python3 -m pip install jupyter keras numpy pandas scikit-learn tensorflow protobuf matplotlib pystan pymc3 seaborn spacy swifter "dask[complete]" feather-format sqlalchemy psycopg2 psycopg2-binary keyring textblob nltk
 sudo -H python3 -m ipykernel install --user
 # Extentions
 sudo -H python3 -m pip install jupyter_nbextensions_configurator jupyter_contrib_nbextensions
 jupyter contrib nbextension install --user
 jupyter nbextensions_configurator enable --user
+jupyter-notebook --generate-config
+
 # Jupyter autostart
 echo "[Unit]
 Description=Jupyter Workplace
@@ -87,7 +89,7 @@ Description=Jupyter Workplace
 [Service]
 Type=simple
 PIDFile=/run/jupyter.pid
-ExecStart=/usr/local/bin/jupyter-notebook
+ExecStart=/usr/local/bin/jupyter-notebook --no-browser --ip="*"
 User=oberlods
 Group=oberlods
 WorkingDirectory=/home/oberlods
