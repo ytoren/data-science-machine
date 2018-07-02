@@ -90,9 +90,9 @@ Description=Jupyter Workplace
 Type=simple
 PIDFile=/run/jupyter.pid
 ExecStart=/usr/local/bin/jupyter-notebook --no-browser --ip="*"
-User=oberlods
-Group=oberlods
-WorkingDirectory=/home/oberlods
+User=$USER
+Group=$USER
+WorkingDirectory=/home/$USER
 Restart=always
 RestartSec=10
 
