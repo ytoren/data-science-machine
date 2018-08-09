@@ -2,6 +2,7 @@
 
 ## Install HomeBrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew analytics off
 
 ## Web
 brew install wget
@@ -27,3 +28,7 @@ brew cask install vlc
 brew cask install calibre  
 
 ## From appstore: slack, whatsapp, pocket, 
+## From time to time run: 
+# brew update
+# brew upgrade
+# brew cask upgrade
