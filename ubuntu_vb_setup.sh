@@ -2,6 +2,12 @@
 sudo apt-get update 
 sudo apt-get upgrade
 
+#############
+# SSH
+############
+sudo ufw allow 22
+# set up port forwarding and keys
+
 ######################
 # VBox guest additions
 ######################
@@ -73,11 +79,12 @@ sudo python2 -m ipykernel install --user
 # 3 Kernel
 sudo apt-get install python3-pip 
 sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
-# sudo python3 -m pip --upgrade pip
-sudo -H python3 -m pip install jupyter keras numpy pandas scikit-learn tensorflow protobuf matplotlib pystan pymc3 seaborn spacy swifter "dask[complete]" feather-format sqlalchemy psycopg2 psycopg2-binary keyring textblob nltk
+sudo python3 -m pip --upgrade pip
+sudo -H pip3 install jupyter keras numpy pandas scikit-learn tensorflow tensorflow-gpu protobuf matplotlib pystan pymc3 seaborn spacy swifter "dask[complete]" feather-format sqlalchemy psycopg2-binary
+# some additional options: textblob nltk psycopg2 keyring 
 sudo -H python3 -m ipykernel install --user
 # Extentions
-sudo -H python3 -m pip install jupyter_nbextensions_configurator jupyter_contrib_nbextensions
+sudo -H pip3 install jupyter_nbextensions_configurator jupyter_contrib_nbextensions
 jupyter contrib nbextension install --user
 jupyter nbextensions_configurator enable --user
 jupyter-notebook --generate-config
@@ -128,7 +135,3 @@ sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 sudo groupadd docker
 sudo usermod -aG docker $USER
 # logout/in to get the service started
-
-# Vbox mounts
-# sudo mount -t vboxsf -o rw,uid=$UID,gid=$(id -g) c_temp /home/izzie/c_temp
-# sudo usermod -a -G vboxsf <username>
