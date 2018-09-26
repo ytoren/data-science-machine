@@ -83,13 +83,22 @@ sudo python2 -m ipykernel install --user
 # 3 Kernel
 sudo apt-get install python3-pip 
 sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
-sudo python3 -m pip --upgrade pip
-sudo -H pip3 install jupyter keras numpy pandas scikit-learn tensorflow tensorflow-gpu protobuf matplotlib pystan pymc3 seaborn spacy swifter "dask[complete]" feather-format sqlalchemy psycopg2-binary
-# some additional options: textblob nltk psycopg2 keyring 
+sudo -H pip3 install pip
+
+# Jupyter  
+sudo -H pip3 install jupyter ipykernel jupyter_nbextensions_configurator jupyter_contrib_nbextensions
+
+# Basic data packages
+sudo -H pip3 install numpy pandas matplotlib feather-format sqlalchemy psycopg2-binary
+# Statistics: scikit-learn pystan pymc3
+# Machine learning: keras tensorflow tensorflow-gpu protobuf
+# NLP: spacy textblob nltk hunspell (needs sudo apt-get install hunspell-en-us hunspell libhunspell-dev) 
+# For Spacy: sudo -H python3 -m spacy download 'en'
+# Big data: swifter "dask[complete]" pypyspark
+
+# Jupyter kernel & extentions
 sudo -H python3 -m ipykernel install --user
-# Extentions
-sudo -H pip3 install jupyter_nbextensions_configurator jupyter_contrib_nbextensions
-jupyter contrib nbextension install --user
+jupyter-contrib nbextension install --user
 jupyter nbextensions_configurator enable --user
 jupyter-notebook --generate-config
 
@@ -116,8 +125,13 @@ sudo systemctl enable jupyter.service
 sudo systemctl daemon-reload
 sudo systemctl restart jupyter.service
 
+# Set passowrd 
+jupyter-notebook password
+
+########
 # Git
-sudo apt-get install git gitg
+########
+sudo apt-get install git # gitg
 sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 
 # Scala
