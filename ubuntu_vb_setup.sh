@@ -96,7 +96,7 @@ Description=Jupyter Workplace
 [Service]
 Type=simple
 PIDFile=/run/jupyter.pid
-ExecStart=/usr/local/bin/jupyter-notebook --no-browser --ip="*"
+ExecStart=/usr/local/bin/jupyter-notebook --no-browser --ip="0.0.0.0"
 User=$USER
 Group=$USER
 WorkingDirectory=/home/$USER
