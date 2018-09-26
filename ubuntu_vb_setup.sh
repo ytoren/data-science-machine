@@ -10,7 +10,7 @@ sudo ufw allow 22
 ## set up port forwarding in VM (0.0.0.0:22 => 127.0.0.1:2222)
 ## On local machine: 
 # ssh-keyscan -t rsa -p 2222 127.0.0.1 >> .ssh/known_hosts
-# ssh <user>@localhost -p2222
+# ssh <user>@127.0.0.1 -p2222
 
 ######################
 # VBox guest additions
