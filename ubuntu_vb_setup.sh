@@ -86,7 +86,9 @@ sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 sudo -H pip3 install pip
 
 # Jupyter  
-sudo -H pip3 install jupyter ipykernel jupyter_nbextensions_configurator jupyter_contrib_nbextensions
+sudo -H pip3 install jupyter 
+sudo -H pip3 install jupyter_contrib_nbextensions
+sudo -H pip3 install jupyter_nbextensions_configurator 
 
 # Basic data packages
 sudo -H pip3 install numpy pandas matplotlib feather-format sqlalchemy psycopg2-binary
@@ -97,9 +99,15 @@ sudo -H pip3 install numpy pandas matplotlib feather-format sqlalchemy psycopg2-
 # Big data: swifter "dask[complete]" pypyspark
 
 # Jupyter kernel & extentions
-sudo -H python3 -m ipykernel install --user
+#sudo -H python3 -m ipykernel install --user
 jupyter-contrib nbextension install --user
 jupyter nbextensions_configurator enable --user
+
+## Should show OK
+jupyter nbextension enable varInspector/main 
+jupyter nbextension enable spellchecker/main
+jupyter nbextension enable toc2/main
+
 jupyter-notebook --generate-config
 
 # Jupyter autostart
