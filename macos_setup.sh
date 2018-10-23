@@ -10,11 +10,15 @@ brew cask install google-chrome
 brew cask install firefox 
 brew cask install skype 
 
+## Security
+brew cask install 1password
+
 ## Dev - General
 brew cask install atom
 brew cask install virtualbox
 brew cask install virtualbox-extension-pack
 brew cask install docker
+brew cask install github
 
 ## Dev - R
 brew cask install xquatrz 
