@@ -1,11 +1,11 @@
 #! /bin/sh
 sudo apt-get update 
-sudo apt-get upgrade
+sudo apt-get -y upgrade
 
 #############
 # SSH
 ############
-sudo apt-get install ssh
+sudo apt-get -y install ssh
 sudo ufw allow 22
 ## set up port forwarding in VM (0.0.0.0:22 => 127.0.0.1:2222)
 ## On local machine: 
@@ -15,7 +15,7 @@ sudo ufw allow 22
 ######################
 # VBox guest additions
 ######################
-sudo apt-get install build-essential
+sudo apt-get install -y build-essential
 ## insert guest addtions CDROM
 sudo mount /dev/cdrom /media/cdrom
 sudo /media/cdrom/VBoxLinuxAdditions.run
@@ -25,25 +25,25 @@ sudo usermod -a -G vboxsf $USER
 ###################
 # Graphical env
 ################
-sudo apt-get install xfce4 lightdm lightdm-gtk-greeter byobu terminator firefox 
+sudo apt-get -y install xfce4 lightdm lightdm-gtk-greeter byobu terminator firefox 
 sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 
 #####################
 # Common tools
 ###############
-sudo apt-get install wget gdebi-core software-properties-common net-tools nano apt-transport-https
+sudo apt-get install -y wget gdebi-core software-properties-common net-tools nano apt-transport-https
 sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 #sudo purge-old-kernels
 
 #############
 # Base R
 #############
-sudo apt-get install apt-transport-https software-properties-common
+sudo apt-get install -y apt-transport-https software-properties-common
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 sudo add-apt-repository 'deb https://cran.rstudio.com/bin/linux/ubuntu bionic-cran35/'
 sudo apt-get update
 
-sudo apt-get install r-base r-cran-rjava default-jdk-headless curl libcurl4-openssl-dev libxml2-dev libssl-dev libsecret-1-dev
+sudo apt-get install -y r-base r-cran-rjava default-jdk-headless curl libcurl4-openssl-dev libxml2-dev libssl-dev libsecret-1-dev
 sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 # R CMD BATCH 
 echo "install.packages(c('rmarkdown', 'formatR', 'shiny','tidyverse', 'gridExtra', 'nlme',  'h2o', 'randomForest', 'xgboost', 'caret', 'sparklyr'));
@@ -56,7 +56,7 @@ spark_install(version = '2.1.0')" > R_setup.R
 # Rstudio client 
 ##################
 ## Get link from https://www.rstudio.com/products/rstudio/download/
-sudo apt-get install libxslt1-dev
+sudo apt-get install -y libxslt1-dev
 wget https://download1.rstudio.org/rstudio-1.0.136-amd64.deb 
 sudo gdebi rstudio-1.0.136-amd64.deb
 
@@ -64,7 +64,7 @@ sudo gdebi rstudio-1.0.136-amd64.deb
 # Rstudio server
 #################
 ## Links: https://www.rstudio.com/products/rstudio/download-server/
-sudo apt-get install gdebi-core
+sudo apt-get install -y gdebi-core
 wget https://download2.rstudio.org/rstudio-server-1.1.453-amd64.deb
 sudo gdebi rstudio-server-1.1.453-amd64.deb
 sudo rstudio-server verify-installation
@@ -74,16 +74,16 @@ sudo rstudio-server verify-installation
 # Jupyter / Python
 ###################
 # 2.7 Kernel
-sudo apt-get install python-pip 
+sudo apt-get install -y python-pip 
 sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
 sudo -H pip install --upgrade pip
 sudo -H pip install jupyter keras numpy pandas scikit-learn tensorflow protobuf matplotlib pystan pymc3 seaborn
 sudo python2 -m pip install ipykernel
 sudo python2 -m ipykernel install --user
 # 3 Kernel
-sudo apt-get install python3-pip 
+sudo apt-get -y install python3-pip 
 sudo apt-get autoremove  && sudo apt-get clean && sudo apt-get autoclean
-sudo -H pip3 install pip
+sudo -H pip3 install -U pip
 
 # Jupyter  
 sudo -H pip3 install jupyter 
@@ -94,7 +94,7 @@ sudo -H pip3 install jupyter_nbextensions_configurator
 sudo -H pip3 install numpy pandas matplotlib feather-format sqlalchemy psycopg2-binary
 # Statistics: scikit-learn pystan pymc3
 # Machine learning: keras tensorflow tensorflow-gpu protobuf
-# NLP: spacy textblob nltk hunspell (needs sudo apt-get install hunspell-en-us hunspell libhunspell-dev) 
+# NLP: spacy textblob nltk hunspell spellchecker (needs sudo apt-get install -y hunspell-en-us hunspell libhunspell-dev) 
 # For Spacy: sudo -H python3 -m spacy download 'en'
 # Big data: swifter "dask[complete]" pypyspark
 
