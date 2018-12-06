@@ -8,7 +8,9 @@ brew analytics off
 brew install wget
 brew cask install google-chrome   
 brew cask install firefox 
-brew cask install skype 
+brew cask install skype
+brew cask install whatsapp
+brew cask install zoomus
 
 ## Security
 brew cask install 1password
@@ -19,6 +21,12 @@ brew cask install virtualbox
 brew cask install virtualbox-extension-pack
 brew cask install docker
 brew cask install github
+brew cask install slack
+brew cask isntall awscli ## might require some chown's
+
+## Android
+brew cask install horndis ## Allow kernel module!!!
+brew cask install android-file-transfer
 
 ## Dev - R
 brew cask install xquatrz 
@@ -31,7 +39,8 @@ brew cask install gimp
 brew cask install vlc
 brew cask install calibre  
 
-## From appstore: slack, whatsapp, pocket, 
+## From appstore: pocket
+
 ## From time to time run: 
 # brew update
 # brew upgrade
