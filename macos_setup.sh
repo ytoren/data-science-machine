@@ -39,6 +39,13 @@ brew cask install gimp
 brew cask install vlc
 brew cask install calibre  
 
+## Spelling
+brew cask install hunspell pkg-config
+ln -s /usr/local/Cellar/hunspell/1.7.0/lib/libhunspell-1.7.0.dylib /usr/local/Cellar/hunspell/1.7.0/lib/libhunspell.dylib
+CFLAGS=$(pkg-config --cflags hunspell) LDFLAGS=$(pkg-config --libs hunspell) pip install hunspell
+
+
+
 ## From appstore: pocket
 
 ## From time to time run: 
