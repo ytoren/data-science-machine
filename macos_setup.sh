@@ -44,7 +44,12 @@ brew cask install hunspell pkg-config
 ln -s /usr/local/Cellar/hunspell/1.7.0/lib/libhunspell-1.7.0.dylib /usr/local/Cellar/hunspell/1.7.0/lib/libhunspell.dylib
 CFLAGS=$(pkg-config --cflags hunspell) LDFLAGS=$(pkg-config --libs hunspell) pip install hunspell
 
-
+## Mount NTFS volumes
+brew cask install osxfuse
+brew install ntfs-3g
+## Approve permissions for the kernel module
+## To mount run (for example): sudo /usr/local/bin/ntfs-3g /dev/disk1s1 /Volumes/NTFS -olocal -oallow_other
+## NOTE: file might not appear on Finder but will appear on terminal.
 
 ## From appstore: pocket
 
