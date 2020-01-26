@@ -27,3 +27,7 @@ jupyter-notebook --generate-config
 ## Add: c.NotebookApp.ip = '0.0.0.0' 
 ## to config file
 ## termux IP is now 100.115.92.2
+
+## http access 
+pkg install libxml2 libxslt
+pip install BeautifulSoup4 requests lxml html5lib
