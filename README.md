@@ -5,3 +5,6 @@ Setup VM/dockers used for data science work. I use a very minimal Ubuntu install
 
 ## `macos_setup.sh`
 Use `homebrew` to setup a MacOS station
+
+## `termux.sh`
+Setup a rudimentary python env on a chromebook using Termux. No root needed. 
