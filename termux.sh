@@ -1,0 +1,29 @@
+#!/bin/bash 
+pkg update
+
+pkg install root-repo
+pkg install unstable-repo
+pkg install x11-repo
+
+# Pointless Repo
+curl -LO https://its-pointless.github.io/setup-pointless-repo.sh
+bash setup-pointless-repo.sh
+
+## Dev tools
+pkg install git nano
+
+## Python CLI + some packages 
+pkg install python numpy scipy 
+pip install pandas
+NPY_NUM_BUILD_JOBS=1 pip install scikit-learn
+NPY_NUM_BUILD_JOBS=1 pip install pystan
+
+pkg install freetype
+pip install matplotlib 
+
+pkg install libzmq
+pip install jupyter
+
+## termux IP=100.115.92.2
+
+
