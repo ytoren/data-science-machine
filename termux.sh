@@ -23,7 +23,7 @@ pip install matplotlib
 
 pkg install libzmq
 pip install jupyter
-
-## termux IP=100.115.92.2
-
-
+jupyter-notebook --generate-config
+## Add: c.NotebookApp.ip = '0.0.0.0' 
+## to config file
+## termux IP is now 100.115.92.2
