@@ -14,7 +14,7 @@ pkg install git nano
 
 ## Python CLI + some packages 
 pkg install python numpy scipy 
-pip install pandas
+pip install pandas Cython
 NPY_NUM_BUILD_JOBS=1 pip install scikit-learn
 NPY_NUM_BUILD_JOBS=1 pip install pystan
 
