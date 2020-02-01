@@ -10,7 +10,7 @@ curl -LO https://its-pointless.github.io/setup-pointless-repo.sh
 bash setup-pointless-repo.sh
 
 ## Dev tools
-pkg install git nano
+pkg install git nano openshh
 
 ## Python CLI + some packages 
 pkg install python numpy scipy 
