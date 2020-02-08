@@ -10,7 +10,8 @@ curl -LO https://its-pointless.github.io/setup-pointless-repo.sh
 bash setup-pointless-repo.sh
 
 ## Dev tools
-pkg install git nano openshh
+pkg install git nano openssh
+ssh-keygen
 
 ## Python CLI + some packages 
 pkg install python numpy scipy 
@@ -24,10 +25,9 @@ pip install matplotlib
 pkg install libzmq
 pip install jupyter
 jupyter-notebook --generate-config
-## Add: c.NotebookApp.ip = '0.0.0.0' 
-## to config file
+echo "c.NotebookApp.ip = \"0.0.0.0\"" >> $HOME/.jupyter/jupyter_notebook_config.py
 ## termux IP is now 100.115.92.2
 
 ## http access 
 pkg install libxml2 libxslt
-pip install BeautifulSoup4 requests lxml html5lib
+pip install requests lxml  # BeautifulSoup4 html5lib
