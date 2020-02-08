@@ -12,6 +12,8 @@ bash setup-pointless-repo.sh
 ## Dev tools
 pkg install git nano openssh
 ssh-keygen
+## Make BASH prompts nicer
+echo "PS1=\"\[\033[33m\][\d \t] \[\033[37m\]\W\$ \"" >> $HOME/.bashrc
 
 ## Python CLI + some packages 
 pkg install python numpy scipy 
