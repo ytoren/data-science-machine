@@ -33,3 +33,7 @@ echo "c.NotebookApp.ip = \"0.0.0.0\"" >> $HOME/.jupyter/jupyter_notebook_config.
 ## http access 
 pkg install libxml2 libxslt
 pip install requests lxml  # BeautifulSoup4 html5lib
+
+## Dark theme
+pip install jupyterthemes 
+jt -t chesterish
