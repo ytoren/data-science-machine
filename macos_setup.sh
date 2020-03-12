@@ -41,7 +41,7 @@ brew cask install virtualbox-extension-pack
 brew cask install docker
 brew cask install github
 brew cask install slack
-brew cask isntall awscli ## might require some chown's
+brew isntall awscli ## might require some chown's
 
 ## Android
 brew cask install horndis ## Allow kernel module!!!
@@ -49,7 +49,7 @@ brew cask install android-file-transfer
 
 ## Dev - R
 brew cask install xquatrz 
-brew cask install r-app
+brew cask install r
 brew cask install rstudio 
 
 ## Media
