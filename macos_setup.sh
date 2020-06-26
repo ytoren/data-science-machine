@@ -6,8 +6,8 @@ brew analytics off
 
 ## Web
 brew install wget
-brew cask install google-chrome   
-brew cask install firefox 
+brew cask install google-chrome
+brew cask install firefox
 brew cask install skype
 brew cask install whatsapp
 brew cask install zoomus
@@ -48,15 +48,21 @@ brew cask install horndis ## Allow kernel module!!!
 brew cask install android-file-transfer
 
 ## Dev - R
-brew cask install xquatrz 
+brew cask install xquatrz
 brew cask install r
-brew cask install rstudio 
+brew cask install rstudio
+## for package documentation
+brew cask install mactex
+# sudo tlmgr update --self
+# sudo tlmgr update --all
+# sudo tlmgr install titling framed inconsolata
+# sudo tlmgr install collection-fontsrecommended
 
 ## Media
 brew cask install flux
 brew cask install gimp
 brew cask install vlc
-brew cask install calibre  
+brew cask install calibre
 
 ## Spelling
 brew cask install hunspell pkg-config
@@ -72,7 +78,7 @@ brew install ntfs-3g
 
 ## From appstore: pocket
 
-## From time to time run: 
+## From time to time run:
 # brew update
 # brew upgrade
 # brew cask upgrade
